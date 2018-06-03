@@ -26,7 +26,7 @@
   "scripts": {
     "test": "eslint lib/**/*.js bin/**/*.js && eslint --global=document demo/**/*.js && node test/test-all.js",
     "build-demo": "cp demo/index.html . && cp node_modules/elkjs/lib/elk.bundled.js . && browserify demo/demo.js > bundle.js",
-    "build-badel": "cp ../demo.js . && cp node_modules/elkjs/lib/elk.bundled.js ../static/ && browserify ./demo.js > ../static/netlistsvg.js"
+    "build-badel": "mkdir -p ../static/skins && cp lib/*.svg ../static/skins/ && cp ../demo.js . && cp node_modules/elkjs/lib/elk.bundled.js ../static/ && browserify ./demo.js > ../static/netlistsvg.js && rm -f ./demo.js"
   },
   "keywords": [
     "svg",
